@@ -10,8 +10,6 @@ const API_BASE = 'https://api.themoviedb.org/3';
     - terror
     - romance
     - documentários
-    - nacionais
-
 */
 
 async function basicFetch(endpoint){
@@ -25,46 +23,47 @@ export default{
     getHomeList: async () =>{
         return [
             {
-                slug: 'Originals',
-                title: 'originais do reactflix',
-                items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'originals',
+                title : "Originais do Netflix",
+                items : await basicFetch(`/discover/tv/?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'Trending',
-                title: 'recomendados',
-                items: await basicFetch(`/trending/all/week&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'trending',
+                title : "Recomendados para Você",
+                items : await basicFetch(`/trending/all/week?language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'Top rated',
-                title: 'em alta na plataforma',
-                items: await basicFetch(`/movie/top_rated&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'toprated',
+                title : "Em Alta",
+                items : await basicFetch(`/movie/top_rated?&language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'Action',
-                title: 'Filmes de ação',
-                items: await basicFetch(`discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'action',
+                title : "Ação",
+                items : await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'Comedy',
-                title: 'Filmes para fazer rir',
-                items: await basicFetch(`discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'comedy',
+                title : "Comédia",
+                items : await basicFetch(`/discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'Horror',
-                title: 'Filmes de dar medo',
-                items: await basicFetch(`discover/movie?with_genres=27&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'horror',
+                title : "Terror",
+                items : await basicFetch(`/discover/movie?with_genres=27&language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'Romance',
-                title: 'Filmes parar assistit juntinho',
-                items: await basicFetch(`discover/movie?with_genres=10749&language=pt-BR&api_key=${API_KEY}`)
-            },
+                slug: 'romance',
+                title : "Romance",
+                items : await basicFetch(`/discover/movie?with_genres=10749&language=pt-BR&api_key=${API_KEY}`)
+            },            
             {
-                slug: 'Documentary',
-                title: 'Documentários',
-                items: await basicFetch(`discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'documentary',
+                title : "Documentários",
+                items : await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
             },
-                      
-        ];
-    }
+        ]
+     }                  
+    
+    
 }

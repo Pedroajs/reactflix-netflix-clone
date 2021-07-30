@@ -24,7 +24,7 @@ export default{
         return [
             {
                 slug: 'originals',
-                title : "Originais do Netflix",
+                title : "Originais do ReactFlix",
                 items : await basicFetch(`/discover/tv/?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
             {

@@ -20,9 +20,11 @@ export function App (){
       let feature = list.filter( i=> i.slug === 'originals');
       let randomChosen = Math.floor(Math.random()*(feature[0].items.results.length -1));
 
-      let chosen = feature[0].items.results[randomChosen]
-      
-      console.log(chosen)
+      let chosen = feature[0].items.results[randomChosen];
+      let chosenInfo = await tmdb.getTargetMovie(chosen.id, 'tv');     
+
+      setFeaturedData(chosenInfo);
+ 
     }
 
     loadAll();

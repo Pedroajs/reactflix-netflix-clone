@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: transparent;
+}
+
+.header .black{
+    background:#141414;
+}
+.header span{
+    
+    font-family: 'Bebas Neue';
+    font-size: 30px;
+    color: red;
+    text-decoration: none;
+}
+.header-user{
+    height: 35px;
+    border-radius: 3px ;
+    
+}
+
+.header-user img{
+    height: 100%;
+}

@@ -9,6 +9,9 @@ export function FeaturedMovie(props){
     for(let i in props.item.genres){
         genres.push(props.item.genres[i].name)
     }
+    let description = props.item.overview;
+
+    if(description.length > 200) description = description.substring(0, 200)+"...";
 
     return (
         <section className="featured"  style={{
